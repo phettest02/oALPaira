@@ -226,13 +226,9 @@ class LINE extends LineAPI {
                 }
                 return;
             }
-            if(this.stateStatus.cancel == 1) {
-                this.cancelAll(seq.to);
-            }
-        }
 
         if(txt == 'response' || txt == 'respon') {
-            this._sendMessage(seq, 'Aira for (a)');
+            this._sendMessage(seq, '[A]ira');
         }
 
       	if(txt == 'keyword' || txt == 'help' || txt == 'key') {
@@ -279,15 +275,10 @@ class LINE extends LineAPI {
             await this._sendMessage(seq,mentions.names.join(''));
         }
 
-	        const action = ['cancel on','cancel off','kick on','kick off','qr on','qr off']
-            if(action.includes(txt)) {
-                this.setState(seq);
-            }
-
-        if(txt == '/creator') {
-            const [ owner ] = await this._getContacts('u79c68416a26d7db88b9d44042dafd4f5');
-            this._sendMessage(seq,`${owner}`);
-	      }
+        const action = ['cancel on','cancel off','kick on','kick off','qr on','qr off']
+        if(action.includes(txt)) {
+            this.setState(seq);
+        }
 
         if(txt == '/myid') {
             this._sendMessage(seq,`MID kamu: ${seq.from}`);
