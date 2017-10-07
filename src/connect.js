@@ -22,8 +22,8 @@ class LineConnect extends LineAPI {
         let { mid, displayName } = await this._client.getProfile();
         console.info(`[*] mid: ${mid}\n`);
         console.info(`[*] Name: ${displayName}\n`);
-        console.info(`NOTE: Dont forget , put your mid and admin on variable 'myBot' in main.js \n`);
-        console.info(`Regrads Alfathdirk and thx for TCR Team \n`);
+        console.info(`*NOTE: Jangan lupa ganti mid di main.js baris 5\n`);
+        console.info(`--Bot created by Alfathdirk, edited by Safiqq--\n`);
         console.info(`=======BOT RUNNING======\n`);
         await this._tokenLogin(this.authToken, this.certificate);
         resolve();
