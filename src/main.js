@@ -211,6 +211,12 @@ class LINE extends LineAPI {
         payload = payload.join(' ');
         let txt = textMessages.toLowerCase();
         let messageID = seq.id;
+        var group = await this._getGroup(seq.to);
+
+        if(group.preventJoinByTicket == false && !isAdminOrBot(seq.from)) {
+            group.preventJoinByTicket = true;
+            await this._updateGroup(group);
+        }
 
         if(cmd == '/cancel') {
             if(payload == 'group') {
