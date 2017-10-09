@@ -199,9 +199,13 @@ class LineAPI {
     return this._client.rejectGroupInvitation(0,groupIds);
   }
 
-  async _createGroup(groupName,members) {
+  _createGroup(groupName) {
+    return this._client.createGroup(groupName);
+  }
+
+  async _createGroups(groupName,members) {
     await this._getAllContactIds();
-    return this._client.createGroup(0,groupName,members);
+    return this._client.createGroups(0,groupName,members);
   }
 
   async _getAllContactIds(){
