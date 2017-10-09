@@ -156,8 +156,8 @@ class LineAPI {
     return this._client.kickoutFromGroup(0,group,memid);
   }
 
-  _cancel(groupid,member) {
-    return this._client.cancelGroupInvitation(0,groupid,member);
+  _cancel(group,memid) {
+    return this._client.cancelGroupInvitation(0,group,memid);
   }
 
   async _getGroupsJoined() {
